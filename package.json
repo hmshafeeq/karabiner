@@ -14,5 +14,8 @@
     "build": "tsm rules.ts",
     "publish": "npm run build && cp karabiner.json ~/.config/karabiner/karabiner.json && launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server",
     "watch": "nodemon --exec yarn build -e ts"
+  },
+  "dependencies": {
+    "karabiner.ts": "^1.25.0"
   }
 }
