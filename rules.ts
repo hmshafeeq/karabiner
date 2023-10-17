@@ -23,6 +23,9 @@ const rules: KarabinerRules[] = [
             key_code: "escape",
           },
         ],
+        parameters: {
+          "basic.to_if_alone_timeout_milliseconds": 500
+        },
         type: "basic",
       },
       //      {
@@ -41,6 +44,42 @@ const rules: KarabinerRules[] = [
       //        ],
       //      },
     ],
+  },
+  {
+    description: "RightOptionFN: Right option enables RightOptionFN mode (see: https://geekhack.org/index.php?topic=51069.0 & https://spacelauncherapp.com)",
+    manipulators: [
+      {
+        from: {
+          key_code: "right_option"
+        },
+        parameters: {
+          "basic.to_if_alone_timeout_milliseconds": 300,
+          "basic.to_if_held_down_threshold_milliseconds": 200
+        },
+        to_after_key_up: [
+          {
+            set_variable: {
+              name: "optionfn_mode",
+              value: 0
+            }
+          }
+        ],
+        to_if_alone: [
+          {
+            key_code: "right_option"
+          }
+        ],
+        to_if_held_down: [
+          {
+            set_variable: {
+              name: "optionfn_mode",
+              value: 1
+            }
+          }
+        ],
+        type: "basic"
+      }
+    ]
   },
   ...createHyperSubLayers({
     // o = "Open" applications
