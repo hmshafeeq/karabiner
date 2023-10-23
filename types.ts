@@ -3,6 +3,11 @@ export interface KarabinerRules {
   manipulators?: Manipulator[];
 }
 
+export interface SimpleRules {
+  from: From;
+  to: To;
+}
+
 export interface Manipulator {
   description?: string;
   type: "basic";

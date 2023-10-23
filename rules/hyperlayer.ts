@@ -6,14 +6,14 @@ export function hyperRules(): KarabinerRules[] {
         ...createHyperSubLayers({
             // o = "Open" applications
             o: {
-                g: app("Google Chrome"),
+                g: app("Arc"),
                 c: app("Cron"),
                 v: app("Visual Studio Code"),
-                d: app("Discord"),
+                d: app("DBngin"),
                 s: app("Slack"),
                 e: app("Superhuman"),
                 n: app("Notion"),
-                t: app("Terminal"),
+                u: app("Terminal"),
                 // Open todo list managed via *H*ypersonic
                 h: open(
                     "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
@@ -22,11 +22,11 @@ export function hyperRules(): KarabinerRules[] {
                 m: app("Mochi"),
                 f: app("Figma"),
                 r: app("Telegram"),
-                // "i"Message
+                // "i"Message 
                 i: app("Messages"),
-                p: app("Spotify"),
+                p: app("PhpStorm"),
                 a: app("iA Presenter"),
-                w: open("https://web.whatsapp.com"),
+                w: open("https://web.whatsapp.com"),        
                 l: open(
                     "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
                 ),
@@ -34,15 +34,7 @@ export function hyperRules(): KarabinerRules[] {
     
             // w = "Window" via rectangle.app
             w: {
-                semicolon: {
-                    description: "Window: Hide",
-                    to: [
-                        {
-                            key_code: "h",
-                            modifiers: ["right_command"],
-                        },
-                    ],
-                },
+                p: open("raycast://extensions/raycast/window-management/left-half"),
                 y: {
                     description: "Window: First Third",
                     to: [
@@ -243,51 +235,21 @@ export function hyperRules(): KarabinerRules[] {
     
             // v = "moVe" which isn't "m" because we want it to be on the left hand
             // so that hjkl work like they do in vim
-            v: {
-                h: {
+            //d: {
+                j: {
                     to: [{ key_code: "left_arrow" }],
                 },
-                j: {
+                k: {
                     to: [{ key_code: "down_arrow" }],
                 },
-                k: {
+                i: {
                     to: [{ key_code: "up_arrow" }],
                 },
                 l: {
                     to: [{ key_code: "right_arrow" }],
-                },
-                // Magicmove via homerow.app
-                m: {
-                    to: [{ key_code: "f", modifiers: ["right_control"] }],
-                },
-                // Scroll mode via homerow.app
-                s: {
-                    to: [{ key_code: "j", modifiers: ["right_control"] }],
-                },
-                d: {
-                    to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-                },
-                u: {
-                    to: [{ key_code: "page_down" }],
-                },
-                i: {
-                    to: [{ key_code: "page_up" }],
-                },
-            },
-    
-            // c = Musi*c* which isn't "m" because we want it to be on the left hand
-            c: {
-                p: {
-                    to: [{ key_code: "play_or_pause" }],
-                },
-                n: {
-                    to: [{ key_code: "fastforward" }],
-                },
-                b: {
-                    to: [{ key_code: "rewind" }],
-                },
-            },
-    
+                }, 
+           // },
+      
             // r = "Raycast"
             r: {
                 l: open(

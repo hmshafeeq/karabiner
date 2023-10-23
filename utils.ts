@@ -148,7 +148,7 @@ function generateSubLayerVariableName(key: KeyCode) {
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string): LayerCommand {
+export function open(what: string): LayerCommand { 
   return {
     to: [
       {
